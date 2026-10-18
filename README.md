@@ -85,7 +85,7 @@ Source/
 - [x] **STEP 0 — Skeleton & standards:** Module configuration, folder structure, logging categories, coding standards, `.editorconfig`, build targets, README.
 - [x] **STEP 1 — Evidence/Codex backbone:** `FGKEvidenceRow`, `DT_HistoricalEvidence` + CSV importer, `UGKCodexSubsystem`, unit tests for the no-upgrade rule.
 - [x] **STEP 2 — Character & exploration:** Arulan 3rd person locomotion, scaffold climbing, interaction prompt, greybox test map Zone 5.
-- [ ] **STEP 3 — Investigation & inscription system:** Inscription decoding Tier 1, reference chart, historical record notification.
+- [x] **STEP 3 — Investigation & inscription system:** Inscription decoding Tier 1, reference chart, historical record notification.
 - [ ] **STEP 4 — Dialogue & memory:** Branching runtime, bounded memory flags, Scholar & Architect dialogue.
 - [ ] **STEP 5 — Quest subsystem:** Quest state machine, objectives, slice beats 1–13.
 - [ ] **STEP 6 — Puzzles:** Stone Alignment T1 & Lion Well 1–4.
