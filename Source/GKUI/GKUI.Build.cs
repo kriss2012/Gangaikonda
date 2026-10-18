@@ -15,7 +15,8 @@ public class GKUI : ModuleRules
 			"SlateCore",
 			"ModelViewViewModel",
 			"GKCore",
-			"GKCodex"
+			"GKCodex",
+			"GKDialogue"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
