@@ -14,7 +14,8 @@ public class GKCombat : ModuleRules
 			"GameplayTags",
 			"GameplayTasks",
 			"GKCore",
-			"GKCharacter"
+			"GKCharacter",
+			"GKExploration"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
