@@ -15,7 +15,8 @@ public class GKSave : ModuleRules
 			"GKQuest",
 			"GKWorld",
 			"GKCharacter",
-			"GKPuzzle"
+			"GKPuzzle",
+			"GKCombat"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
