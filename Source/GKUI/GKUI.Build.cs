@@ -21,7 +21,8 @@ public class GKUI : ModuleRules
 			"GKCombat",
 			"GKCharacter",
 			"GKWorld",
-			"GKSave"
+			"GKSave",
+			"GKAudio"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
