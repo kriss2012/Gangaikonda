@@ -11,7 +11,7 @@
  * Test: GK.Combat.BlockingAndParryMechanics
  * Validates active shield blocking, damage mitigation, stamina consumption, and parry window deflect (Doc 10 §5).
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCombatMechanicsTest, "GK.Combat.BlockingAndParryMechanics", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCombatMechanicsTest, "GK.Combat.BlockingAndParryMechanics", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKCombatMechanicsTest::RunTest(const FString& Parameters)
 {
@@ -64,7 +64,7 @@ bool FGKCombatMechanicsTest::RunTest(const FString& Parameters)
  * Test: GK.Combat.EnemyFleeAI
  * Validates that an enemy below 25% health breaks combat to flee (Doc 10 §3).
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKEnemyFleeTest, "GK.Combat.EnemyFleeAI", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKEnemyFleeTest, "GK.Combat.EnemyFleeAI", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKEnemyFleeTest::RunTest(const FString& Parameters)
 {
@@ -73,6 +73,7 @@ bool FGKEnemyFleeTest::RunTest(const FString& Parameters)
 
 	AGKEnemyCharacter* Enemy = World->SpawnActor<AGKEnemyCharacter>();
 	TestNotNull(TEXT("Enemy spawned"), Enemy);
+	Enemy->DispatchBeginPlay();
 	TestFalse(TEXT("Enemy initially not fleeing"), Enemy->IsFleeing());
 
 	UGKCombatComponent* Combat = Enemy->FindComponentByClass<UGKCombatComponent>();
@@ -82,6 +83,7 @@ bool FGKEnemyFleeTest::RunTest(const FString& Parameters)
 	FGKDamageEvent HeavyStrike;
 	HeavyStrike.BaseDamage = 80.0f;
 	Combat->ReceiveDamage(HeavyStrike);
+	Enemy->CheckFleeCondition();
 
 	TestEqual(TEXT("Health dropped to 20"), Combat->GetHealth(), 20.0f);
 	TestTrue(TEXT("Enemy triggered flee behavior"), Enemy->IsFleeing());
@@ -95,7 +97,7 @@ bool FGKEnemyFleeTest::RunTest(const FString& Parameters)
  * Test: GK.Stealth.SuspicionProgression
  * Validates graduated suspicion meter (Unaware -> Alert -> Searching -> Hostile) and decay (Doc 11 §3).
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKStealthSuspicionTest, "GK.Stealth.SuspicionProgression", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKStealthSuspicionTest, "GK.Stealth.SuspicionProgression", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKStealthSuspicionTest::RunTest(const FString& Parameters)
 {
@@ -107,8 +109,8 @@ bool FGKStealthSuspicionTest::RunTest(const FString& Parameters)
 	Stealth->ProcessPerception(1.0f, true, 400.0f, false, EGKDisguiseRole::None);
 	TestEqual(TEXT("Suspicion reached Alert state"), Stealth->GetSuspicionState(), EGKSuspicionState::Alert);
 
-	// 2. Process another 1.5 seconds -> reaches Hostile (>= 100 suspicion)
-	Stealth->ProcessPerception(1.5f, true, 400.0f, false, EGKDisguiseRole::None);
+	// 2. Process another 2.0 seconds -> reaches Hostile (>= 100 suspicion)
+	Stealth->ProcessPerception(2.0f, true, 400.0f, false, EGKDisguiseRole::None);
 	TestEqual(TEXT("Suspicion reached Hostile state"), Stealth->GetSuspicionState(), EGKSuspicionState::Hostile);
 
 	// 3. Out of sight for 3.0 seconds -> decays

@@ -71,6 +71,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "GK|Quest")
 	void RestoreQuestStates(const TMap<FName, EGKQuestState>& InStates, FName InActiveQuestID);
 
+	/** Dependency injection hook for mock Codex subsystem in tests */
+	void SetCodexSubsystem(class UGKCodexSubsystem* InSubsystem) { CodexSubsystemOverride = InSubsystem; }
+
 	UPROPERTY(BlueprintAssignable, Category = "GK|Quest")
 	FOnGKQuestStarted OnQuestStarted;
 
@@ -91,11 +94,14 @@ private:
 
 	/** Active objective progress per quest */
 	UPROPERTY(SaveGame)
-	TMap<FName, TArray<FGKQuestObjective>> RuntimeObjectives;
+	TMap<FName, FGKQuestObjectiveList> RuntimeObjectives;
 
 	/** Active quest ID */
 	UPROPERTY(SaveGame)
 	FName CurrentActiveQuestID;
+
+	UPROPERTY(Transient)
+	TObjectPtr<class UGKCodexSubsystem> CodexSubsystemOverride;
 
 	void LoadDefaultQuests();
 };

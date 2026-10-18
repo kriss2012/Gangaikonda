@@ -30,6 +30,19 @@ UGKCodexSubsystem* UGKCodexSubsystem::Get(const UObject* WorldContextObject)
 		return nullptr;
 	}
 
+	if (const UGameInstance* GI = Cast<UGameInstance>(WorldContextObject))
+	{
+		return const_cast<UGameInstance*>(GI)->GetSubsystem<UGKCodexSubsystem>();
+	}
+
+	if (const UGameInstanceSubsystem* Subsystem = Cast<UGameInstanceSubsystem>(WorldContextObject))
+	{
+		if (UGameInstance* GI = Subsystem->GetGameInstance())
+		{
+			return GI->GetSubsystem<UGKCodexSubsystem>();
+		}
+	}
+
 	UGameInstance* GameInstance = UGameplayStatics::GetGameInstance(WorldContextObject);
 	if (!GameInstance)
 	{
@@ -113,7 +126,7 @@ bool UGKCodexSubsystem::UnlockEntry(FName EvidenceID)
 	FGKEvidenceRow EvidenceRow;
 	if (!GetEvidenceRow(EvidenceID, EvidenceRow))
 	{
-		UE_LOG(LogGKCodex, Error, TEXT("UnlockEntry failed: ID '%s' has no valid row in DT_HistoricalEvidence."),
+		UE_LOG(LogGKCodex, Warning, TEXT("UnlockEntry failed: ID '%s' has no valid row in DT_HistoricalEvidence."),
 			*EvidenceID.ToString());
 		return false;
 	}

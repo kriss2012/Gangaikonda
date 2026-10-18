@@ -1,0 +1,24 @@
+# Unreal Engine generated files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Visual Studio generated files
+.vs/
+.vscode/
+*.sln
+*.VC.db
+*.VC.VC.opendb
+
+# Operating system files
+Thumbs.db
+Desktop.ini
+
+# Build artifacts
+*.pdb
+*.ilk
+*.obj
+*.pch
+*.lib
+*.exp

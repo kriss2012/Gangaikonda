@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GKCharacterBase.h"
-#include "Enemy/GKEnemyCharacter.generated.h"
+#include "GKEnemyCharacter.generated.h"
 
 class UGKCombatComponent;
 class UGKStealthComponent;
@@ -40,14 +40,19 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "GK|AI")
 	void TriggerFleeBehavior();
 
+	/** Evaluates current health against FleeHealthPercentage and triggers retreat if threshold is breached */
+	UFUNCTION(BlueprintCallable, Category = "GK|AI")
+	void CheckFleeCondition();
+
 	UPROPERTY(BlueprintAssignable, Category = "GK|AI")
 	FOnGKEnemyFled OnEnemyFled;
 
-protected:
-	virtual void BeginPlay() override;
-
 	UFUNCTION()
 	void HandleDamageTaken(float FinalDamage, bool bBlocked, bool bParried);
+
+protected:
+	virtual void PostInitializeComponents() override;
+	virtual void BeginPlay() override;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "GK|AI")
 	bool bIsFleeing;

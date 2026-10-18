@@ -30,7 +30,7 @@
  * - Strict No-Upgrade Rule: Confidence tier in Codex == Doc 03 research tier (Hard Rule 4).
  * - Data lives in data tables, never hardcoded strings (Hard Rule 6).
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKDoc39HistoricalAuditTest, "GK.QA.Doc39HistoricalAuthenticityAudit", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKDoc39HistoricalAuditTest, "GK.QA.Doc39HistoricalAuthenticityAudit", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKDoc39HistoricalAuditTest::RunTest(const FString& Parameters)
 {
@@ -40,7 +40,7 @@ bool FGKDoc39HistoricalAuditTest::RunTest(const FString& Parameters)
 	TestTrue(TEXT("DT_HistoricalEvidence.csv loaded successfully"), bLoaded);
 
 	TArray<FString> Lines;
-	CsvContent.ParseIntoLines(Lines);
+	CsvContent.ParseIntoArrayLines(Lines);
 	TestTrue(TEXT("CSV contains at least 31 lines (1 header + 30 records)"), Lines.Num() >= 31);
 
 	int32 DocumentedCount = 0;
@@ -93,7 +93,7 @@ bool FGKDoc39HistoricalAuditTest::RunTest(const FString& Parameters)
 	TestEqual(TEXT("Plausible Reconstruction records count"), PlausibleCount, 7);
 	TestEqual(TEXT("Fictional records count"), FictionalCount, 3);
 
-	UE_LOG(LogGKCodex, Log, TEXT("--- DOC 39 HISTORICAL AUTHENTICITY AUDIT VERDICT: 100% PASS ---"));
+	UE_LOG(LogGKCodex, Log, TEXT("--- DOC 39 HISTORICAL AUTHENTICITY AUDIT VERDICT: 100%% PASS ---"));
 	UE_LOG(LogGKCodex, Log, TEXT("Audited: 20 Documented, 7 Plausible Reconstruction, 3 Fictional (All Disclaimed)."));
 
 	return true;
@@ -105,7 +105,7 @@ bool FGKDoc39HistoricalAuditTest::RunTest(const FString& Parameters)
  * Quest chain, Codex dispatch, bounded memory, combat save-gating, minimal HUD,
  * audio score restraint, and motivated lighting presets.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKDoc38FullVerticalSliceTest, "GK.QA.Doc38EndToEndVerticalSliceSuite", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKDoc38FullVerticalSliceTest, "GK.QA.Doc38EndToEndVerticalSliceSuite", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKDoc38FullVerticalSliceTest::RunTest(const FString& Parameters)
 {
@@ -143,6 +143,7 @@ bool FGKDoc38FullVerticalSliceTest::RunTest(const FString& Parameters)
 	AddAuditRow(TEXT("H2"), EGKEvidenceCategory::Documented, EGKConfidence::Known);
 
 	CodexSubsystem->SetEvidenceDataTable(MockTable);
+	QuestSubsystem->SetCodexSubsystem(CodexSubsystem);
 
 	// 3. Register & Progress Vertical Slice Quest (13 Beats)
 	UGKQuestDataAsset* VSQuest = FGKVSQuestChain::BuildVerticalSliceQuest(GetTransientPackage());

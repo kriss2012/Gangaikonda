@@ -9,7 +9,7 @@
  * Test: GK.World.LightingPresetsAndDoc34
  * Enforces Doc 17 §5 and Doc 34: Motivated lighting parameters and gold accent restraint.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKLightingPresetsTest, "GK.World.LightingPresetsAndDoc34", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKLightingPresetsTest, "GK.World.LightingPresetsAndDoc34", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKLightingPresetsTest::RunTest(const FString& Parameters)
 {
@@ -43,7 +43,7 @@ bool FGKLightingPresetsTest::RunTest(const FString& Parameters)
  * Test: GK.World.PerformanceTargetsAndScalability
  * Enforces Doc 01 §35 frame-rate targets (30 fps floor / 60 fps target) and Nanite/Lumen budgets.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKPerformanceTargetsTest, "GK.World.PerformanceTargetsAndScalability", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKPerformanceTargetsTest, "GK.World.PerformanceTargetsAndScalability", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKPerformanceTargetsTest::RunTest(const FString& Parameters)
 {

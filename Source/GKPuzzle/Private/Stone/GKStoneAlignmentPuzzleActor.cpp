@@ -46,6 +46,8 @@ AGKStoneAlignmentPuzzleActor::AGKStoneAlignmentPuzzleActor()
 	B3.TargetOrientationQuarterTurns = 3;
 	B3.CurrentOrientationQuarterTurns = 1;
 	CourseBlocks.Add(B3);
+
+	RecalculateLoadPaths();
 }
 
 void AGKStoneAlignmentPuzzleActor::BeginPlay()
@@ -87,7 +89,7 @@ bool AGKStoneAlignmentPuzzleActor::RotateBlockClockwise(int32 BlockIndex)
 		CourseBlocks[BlockIndex].LoadStressRatio);
 
 	// Check if all blocks are aligned
-	AttemptSolve();
+	AttemptSolve_Implementation();
 	return true;
 }
 

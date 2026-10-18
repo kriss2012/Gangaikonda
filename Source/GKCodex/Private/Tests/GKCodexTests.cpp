@@ -12,7 +12,7 @@
  * Verifies Hard Rule 4: "Never upgrade a confidence tier when moving data from the research database to the Codex."
  * Verifies that UGKCodexEntryViewModel strictly preserves Category and Confidence from source row without mutation.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCodexNoUpgradeTest, "GK.Codex.NoUpgradeRule", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCodexNoUpgradeTest, "GK.Codex.NoUpgradeRule", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKCodexNoUpgradeTest::RunTest(const FString& Parameters)
 {
@@ -65,7 +65,7 @@ bool FGKCodexNoUpgradeTest::RunTest(const FString& Parameters)
  * Test: GKCodex.SubsystemLifecycle
  * Verifies UGKCodexSubsystem unlock logic, idempotency, filtering, and delegate notifications.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCodexSubsystemTest, "GK.Codex.SubsystemLifecycle", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCodexSubsystemTest, "GK.Codex.SubsystemLifecycle", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKCodexSubsystemTest::RunTest(const FString& Parameters)
 {
@@ -88,7 +88,8 @@ bool FGKCodexSubsystemTest::RunTest(const FString& Parameters)
 	TestTable->AddRow(FName(TEXT("B2")), RowB);
 
 	// Instantiate subsystem for test
-	UGKCodexSubsystem* Subsystem = NewObject<UGKCodexSubsystem>(GetTransientPackage());
+	UGameInstance* TestGI = NewObject<UGameInstance>();
+	UGKCodexSubsystem* Subsystem = NewObject<UGKCodexSubsystem>(TestGI);
 	Subsystem->SetEvidenceDataTable(TestTable);
 
 	// Verify initial state
@@ -126,7 +127,7 @@ bool FGKCodexSubsystemTest::RunTest(const FString& Parameters)
 	// Test save state restoration
 	TSet<FName> SaveSet;
 	SaveSet.Add(FName(TEXT("A1")));
-	UGKCodexSubsystem* NewSubsystem = NewObject<UGKCodexSubsystem>(GetTransientPackage());
+	UGKCodexSubsystem* NewSubsystem = NewObject<UGKCodexSubsystem>(TestGI);
 	NewSubsystem->SetEvidenceDataTable(TestTable);
 	NewSubsystem->RestoreUnlockedEntries(SaveSet);
 	TestTrue(TEXT("Restored subsystem has A1 unlocked"), NewSubsystem->IsUnlocked(FName(TEXT("A1"))));

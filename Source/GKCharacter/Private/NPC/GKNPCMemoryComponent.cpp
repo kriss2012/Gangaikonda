@@ -29,7 +29,7 @@ void UGKNPCMemoryComponent::SetMemoryFlag_Implementation(FName FlagKey, bool Val
 	{
 		UE_LOG(LogGKDialogue, Warning,
 			TEXT("NPCMemoryComponent on %s exceeded memory budget (%d flags). Flag '%s' rejected."),
-			*GetOwner()->GetName(), MaxMemoryFlags, *FlagKey.ToString());
+			GetOwner() ? *GetOwner()->GetName() : TEXT("Standalone"), MaxMemoryFlags, *FlagKey.ToString());
 		return;
 	}
 
@@ -41,7 +41,7 @@ void UGKNPCMemoryComponent::SetMemoryFlag_Implementation(FName FlagKey, bool Val
 	if (!bExisted || bOldValue != Value)
 	{
 		UE_LOG(LogGKDialogue, Log, TEXT("NPC %s memory flag updated: %s = %s"),
-			*GetOwner()->GetName(), *FlagKey.ToString(), Value ? TEXT("True") : TEXT("False"));
+			GetOwner() ? *GetOwner()->GetName() : TEXT("Standalone"), *FlagKey.ToString(), Value ? TEXT("True") : TEXT("False"));
 		OnMemoryFlagChanged.Broadcast(FlagKey, Value);
 	}
 }
@@ -78,5 +78,5 @@ void UGKNPCMemoryComponent::RestoreMemoryFlags(const TMap<FName, bool>& InFlags)
 		}
 	}
 	UE_LOG(LogGKDialogue, Log, TEXT("NPC %s restored %d memory flags from save state."),
-		*GetOwner()->GetName(), BoundedMemoryFlags.Num());
+		GetOwner() ? *GetOwner()->GetName() : TEXT("Standalone"), BoundedMemoryFlags.Num());
 }

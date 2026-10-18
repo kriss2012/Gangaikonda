@@ -64,3 +64,18 @@ struct GKQUEST_API FGKQuestObjective
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GK|Quest")
 	FName TriggerTag;
 };
+
+/**
+ * Wrapper struct to allow TMap<FName, FGKQuestObjectiveList> in UHT reflection.
+ */
+USTRUCT(BlueprintType)
+struct GKQUEST_API FGKQuestObjectiveList
+{
+	GENERATED_BODY()
+
+	FGKQuestObjectiveList() {}
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GK|Quest")
+	TArray<FGKQuestObjective> Objectives;
+};
+

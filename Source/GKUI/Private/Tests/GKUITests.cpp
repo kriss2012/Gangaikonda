@@ -17,7 +17,7 @@
  * Enforces Doc 01 §29, Doc 20 §9, and Hard Rule 5:
  * Zero floating damage numbers, grounded vitals representation.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKHUDViewModelTest, "GK.UI.HUDGroundedVitalsAndZeroDamageNumbers", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKHUDViewModelTest, "GK.UI.HUDGroundedVitalsAndZeroDamageNumbers", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKHUDViewModelTest::RunTest(const FString& Parameters)
 {
@@ -42,7 +42,7 @@ bool FGKHUDViewModelTest::RunTest(const FString& Parameters)
  * Test: GK.UI.CodexJournalRedundantAccessibility
  * Validates locked 4-field format and redundant coding (border style + explicit text label, never color alone).
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCodexJournalAccessibilityTest, "GK.UI.CodexJournalRedundantAccessibility", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCodexJournalAccessibilityTest, "GK.UI.CodexJournalRedundantAccessibility", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKCodexJournalAccessibilityTest::RunTest(const FString& Parameters)
 {
@@ -89,14 +89,14 @@ bool FGKCodexJournalAccessibilityTest::RunTest(const FString& Parameters)
 	TestEqual(TEXT("Detail Source matches A1"), JournalVM->DetailSource.ToString(), TEXT("SII Vol II No 20"));
 	TestEqual(TEXT("Detail Date matches A1"), JournalVM->DetailDatePeriod.ToString(), TEXT("c. 1025 CE"));
 	TestEqual(TEXT("Explicit Confidence Text label is KNOWN"), JournalVM->DetailConfidenceText.ToString(), TEXT("KNOWN"));
-	TestEqual(TEXT("Border style is SolidBronze"), JournalVM->DetailBorderStyle, EGKCodexBorderStyle::SolidBronze);
-	TestEqual(TEXT("Badge label is [DOCUMENTED]"), JournalVM->DetailCategoryBadge.ToString(), TEXT("[DOCUMENTED]"));
+	TestEqual(TEXT("Border style is Solid"), JournalVM->DetailBorderStyle, EGKCodexBorderStyle::Solid);
+	TestEqual(TEXT("Badge label is DOCUMENTED"), JournalVM->DetailCategoryBadge.ToString(), TEXT("DOCUMENTED"));
 
 	// Select Fictional Entry
 	JournalVM->SelectEntry(JournalVM->VisibleEntries[1]);
 	TestEqual(TEXT("Explicit Confidence Text label is UNKNOWN"), JournalVM->DetailConfidenceText.ToString(), TEXT("UNKNOWN"));
-	TestEqual(TEXT("Border style is MutedGranite"), JournalVM->DetailBorderStyle, EGKCodexBorderStyle::MutedGranite);
-	TestEqual(TEXT("Badge label is [FICTIONAL]"), JournalVM->DetailCategoryBadge.ToString(), TEXT("[FICTIONAL]"));
+	TestEqual(TEXT("Border style is Desaturated"), JournalVM->DetailBorderStyle, EGKCodexBorderStyle::Desaturated);
+	TestEqual(TEXT("Badge label is FICTIONAL"), JournalVM->DetailCategoryBadge.ToString(), TEXT("FICTIONAL"));
 
 	return true;
 }
@@ -105,7 +105,7 @@ bool FGKCodexJournalAccessibilityTest::RunTest(const FString& Parameters)
  * Test: GK.UI.QuestJournalEvidenceTags
  * Enforces Doc 20 §4: Quest entries must display evidence category badges directly in the journal.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKQuestJournalEvidenceTest, "GK.UI.QuestJournalEvidenceTags", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKQuestJournalEvidenceTest, "GK.UI.QuestJournalEvidenceTags", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKQuestJournalEvidenceTest::RunTest(const FString& Parameters)
 {
@@ -126,9 +126,9 @@ bool FGKQuestJournalEvidenceTest::RunTest(const FString& Parameters)
 	if (JournalVM->ActiveQuests.Num() > 0)
 	{
 		UGKQuestJournalEntryViewModel* Entry = JournalVM->ActiveQuests[0];
-		TestEqual(TEXT("Quest title matches"), Entry->Title.ToString(), VSQuest->Title.ToString());
-		// Vertical Slice Quest is PlausibleReconstruction
-		TestEqual(TEXT("Evidence badge is [PLAUSIBLE RECONSTRUCTION]"), Entry->EvidenceCategoryBadge.ToString(), TEXT("[PLAUSIBLE RECONSTRUCTION]"));
+		TestEqual(TEXT("Quest title matches"), Entry->Title.ToString(), VSQuest->QuestTitle.ToString());
+		// Vertical Slice Quest is Documented
+		TestEqual(TEXT("Evidence badge is [DOCUMENTED]"), Entry->EvidenceCategoryBadge.ToString(), TEXT("[DOCUMENTED]"));
 		TestEqual(TEXT("Current objective matches first beat"), Entry->CurrentObjectiveText.ToString(), VSQuest->Objectives[0].Description.ToString());
 	}
 
@@ -139,7 +139,7 @@ bool FGKQuestJournalEvidenceTest::RunTest(const FString& Parameters)
  * Test: GK.UI.PauseMenuCombatGating
  * Enforces Doc 18 §6 & Doc 20 §2: Manual saves disabled during combat.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKPauseMenuCombatGatingTest, "GK.UI.PauseMenuCombatGating", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKPauseMenuCombatGatingTest, "GK.UI.PauseMenuCombatGating", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKPauseMenuCombatGatingTest::RunTest(const FString& Parameters)
 {
@@ -165,7 +165,7 @@ bool FGKPauseMenuCombatGatingTest::RunTest(const FString& Parameters)
  * Test: GK.UI.AccessibilitySettingsDefaults
  * Enforces Doc 37: Subtitles on by default, correct assist multipliers.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKAccessibilityDefaultsTest, "GK.UI.AccessibilitySettingsDefaults", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKAccessibilityDefaultsTest, "GK.UI.AccessibilitySettingsDefaults", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKAccessibilityDefaultsTest::RunTest(const FString& Parameters)
 {

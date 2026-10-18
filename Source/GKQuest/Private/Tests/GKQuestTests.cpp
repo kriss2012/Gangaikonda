@@ -12,7 +12,7 @@
  * Test: GK.Quest.LifecycleAndCodexRewards
  * Validates quest registration, objective sequential activation, completion, and automated Codex reward unlocks.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKQuestProgressionTest, "GK.Quest.LifecycleAndCodexRewards", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKQuestProgressionTest, "GK.Quest.LifecycleAndCodexRewards", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKQuestProgressionTest::RunTest(const FString& Parameters)
 {
@@ -46,6 +46,7 @@ bool FGKQuestProgressionTest::RunTest(const FString& Parameters)
 	AddMockRow(FName(TEXT("H2")));
 
 	CodexSubsystem->SetEvidenceDataTable(MockTable);
+	QuestSubsystem->SetCodexSubsystem(CodexSubsystem);
 
 	// 2. Build and register vertical slice quest
 	UGKQuestDataAsset* VSQuest = FGKVSQuestChain::BuildVerticalSliceQuest(GetTransientPackage());

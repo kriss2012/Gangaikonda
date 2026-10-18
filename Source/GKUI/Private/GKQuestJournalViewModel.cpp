@@ -24,7 +24,7 @@ void UGKQuestJournalViewModel::RefreshFromSubsystem(UGKQuestSubsystem* Subsystem
 	{
 		UGKQuestJournalEntryViewModel* Entry = NewObject<UGKQuestJournalEntryViewModel>(this);
 		Entry->QuestID = ActiveData->QuestID;
-		Entry->Title = ActiveData->Title;
+		Entry->Title = ActiveData->QuestTitle;
 		Entry->CategoryName = NSLOCTEXT("GKUI", "MainQuestCat", "Main Campaign");
 		Entry->EvidenceCategory = ActiveData->HistoricalCategory;
 		Entry->QuestState = Subsystem->GetQuestState(ActiveData->QuestID);

@@ -16,14 +16,14 @@ void UGKMassCrowdScheduleProcessor::SetGlobalTimeOfDay(EGKTimeOfDay NewTime)
 	GlobalTimeOfDay = NewTime;
 }
 
-void UGKMassCrowdScheduleProcessor::ConfigureQueries()
+void UGKMassCrowdScheduleProcessor::ConfigureQueries(const TSharedRef<FMassEntityManager>& EntityManager)
 {
 	CrowdQuery.AddRequirement<FGKCrowdMemberFragment>(EMassFragmentAccess::ReadWrite);
 }
 
 void UGKMassCrowdScheduleProcessor::Execute(FMassEntityManager& EntityManager, FMassExecutionContext& Context)
 {
-	CrowdQuery.ForEachEntityChunk(EntityManager, Context, [this](FMassExecutionContext& ChunkContext)
+	CrowdQuery.ForEachEntityChunk(Context, [this](FMassExecutionContext& ChunkContext)
 	{
 		const int32 NumEntities = ChunkContext.GetNumEntities();
 		const TArrayView<FGKCrowdMemberFragment> CrowdFragments = ChunkContext.GetMutableFragmentView<FGKCrowdMemberFragment>();

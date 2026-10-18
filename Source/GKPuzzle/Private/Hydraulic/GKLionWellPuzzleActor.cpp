@@ -158,7 +158,7 @@ bool AGKLionWellPuzzleActor::ToggleSluiceGate(int32 GateID)
 
 	OnSluiceGateToggled.Broadcast(GateID, TargetGate->bIsOpen);
 	SimulateFlowGraph();
-	AttemptSolve();
+	AttemptSolve_Implementation();
 	return true;
 }
 
@@ -173,7 +173,7 @@ bool AGKLionWellPuzzleActor::ClearSedimentBlockage()
 				Node.bIsSedimentBlocked = false;
 				UE_LOG(LogGKPuzzle, Log, TEXT("Sediment basin cleared of silt blockage."));
 				SimulateFlowGraph();
-				AttemptSolve();
+				AttemptSolve_Implementation();
 				return true;
 			}
 			return false;

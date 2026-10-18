@@ -17,12 +17,24 @@ AGKEnemyCharacter::AGKEnemyCharacter()
 	RunSpeed = 480.0f; // Fleeing enemies run faster
 }
 
+void AGKEnemyCharacter::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	if (CombatComponent)
+	{
+		CombatComponent->OnDamageProcessed.RemoveAll(this);
+		CombatComponent->OnDamageProcessed.AddDynamic(this, &AGKEnemyCharacter::HandleDamageTaken);
+	}
+}
+
 void AGKEnemyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
 	if (CombatComponent)
 	{
+		CombatComponent->OnDamageProcessed.RemoveAll(this);
 		CombatComponent->OnDamageProcessed.AddDynamic(this, &AGKEnemyCharacter::HandleDamageTaken);
 	}
 }
@@ -43,13 +55,22 @@ void AGKEnemyCharacter::Tick(float DeltaTime)
 
 void AGKEnemyCharacter::HandleDamageTaken(float FinalDamage, bool bBlocked, bool bParried)
 {
-	if (!CombatComponent || bIsFleeing)
+	CheckFleeCondition();
+}
+
+void AGKEnemyCharacter::CheckFleeCondition()
+{
+	if (bIsFleeing)
 	{
 		return;
 	}
 
+	const float CurrentHP = CombatComponent ? CombatComponent->GetHealth() : 0.0f;
+	const float MaxHP = CombatComponent ? CombatComponent->MaxHealth : 100.0f;
+	const float HealthNorm = MaxHP > 0.0f ? CurrentHP / MaxHP : 0.0f;
+
 	// Check if health drops below flee threshold (Doc 10 §3)
-	if (CombatComponent->IsAlive() && CombatComponent->GetHealthNormalized() <= FleeHealthPercentage)
+	if (CurrentHP > 0.0f && HealthNorm <= FleeHealthPercentage)
 	{
 		TriggerFleeBehavior();
 	}

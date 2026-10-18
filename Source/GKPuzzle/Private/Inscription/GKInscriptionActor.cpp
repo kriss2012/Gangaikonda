@@ -141,7 +141,7 @@ bool AGKInscriptionActor::AssignFragmentToSlot(int32 SlotIndex, int32 FragmentID
 
 	if (bAllFilled)
 	{
-		AttemptSolve();
+		AttemptSolve_Implementation();
 	}
 
 	return true;

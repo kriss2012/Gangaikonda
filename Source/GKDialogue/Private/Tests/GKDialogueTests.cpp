@@ -41,7 +41,7 @@ public:
  * Test: GK.Dialogue.MemoryAndBranching
  * Validates dialogue progression, memory flag mutation on option choice, and cosmetic branch handling.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKDialogueBranchingTest, "GK.Dialogue.MemoryAndBranching", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKDialogueBranchingTest, "GK.Dialogue.MemoryAndBranching", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKDialogueBranchingTest::RunTest(const FString& Parameters)
 {

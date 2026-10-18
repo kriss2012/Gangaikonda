@@ -71,7 +71,7 @@ void UGKStealthComponent::TransitionState(EGKSuspicionState NewState)
 		const EGKSuspicionState OldState = CurrentState;
 		CurrentState = NewState;
 		UE_LOG(LogGKExploration, Log, TEXT("Guard '%s' suspicion state: %s -> %s (Meter: %.1f)"),
-			*GetOwner()->GetName(), *UEnum::GetValueAsString(OldState), *UEnum::GetValueAsString(NewState), CurrentSuspicion);
+			GetOwner() ? *GetOwner()->GetName() : TEXT("Standalone"), *UEnum::GetValueAsString(OldState), *UEnum::GetValueAsString(NewState), CurrentSuspicion);
 
 		OnSuspicionStateChanged.Broadcast(OldState, NewState);
 	}

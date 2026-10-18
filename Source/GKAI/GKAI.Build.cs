@@ -13,6 +13,7 @@ public class GKAI : ModuleRules
 			"AIModule",
 			"GameplayTasks",
 			"MassEntity",
+			"MassCore",
 			"MassCommon",
 			"GKCore",
 			"GKCharacter"

@@ -82,13 +82,13 @@ bool UGKQuestSubsystem::StartQuest(FName QuestID)
 	CurrentActiveQuestID = QuestID;
 
 	// Initialize runtime objectives
-	TArray<FGKQuestObjective>& Objectives = RuntimeObjectives.FindOrAdd(QuestID);
-	Objectives = QuestData->Objectives;
+	FGKQuestObjectiveList& ObjList = RuntimeObjectives.FindOrAdd(QuestID);
+	ObjList.Objectives = QuestData->Objectives;
 
 	// Activate first objective
-	if (Objectives.Num() > 0)
+	if (ObjList.Objectives.Num() > 0)
 	{
-		Objectives[0].State = EGKObjectiveState::Active;
+		ObjList.Objectives[0].State = EGKObjectiveState::Active;
 	}
 
 	UE_LOG(LogGKQuest, Log, TEXT("QUEST STARTED: %s ('%s') - Act %d"),
@@ -100,14 +100,14 @@ bool UGKQuestSubsystem::StartQuest(FName QuestID)
 
 bool UGKQuestSubsystem::CompleteObjective(FName QuestID, FName ObjectiveID)
 {
-	TArray<FGKQuestObjective>* ObjectivesPtr = RuntimeObjectives.Find(QuestID);
+	FGKQuestObjectiveList* ObjectivesPtr = RuntimeObjectives.Find(QuestID);
 	if (!ObjectivesPtr)
 	{
 		UE_LOG(LogGKQuest, Warning, TEXT("CompleteObjective: Quest '%s' has no active runtime objectives."), *QuestID.ToString());
 		return false;
 	}
 
-	TArray<FGKQuestObjective>& Objectives = *ObjectivesPtr;
+	TArray<FGKQuestObjective>& Objectives = ObjectivesPtr->Objectives;
 	int32 CompletedIndex = INDEX_NONE;
 
 	for (int32 i = 0; i < Objectives.Num(); ++i)
@@ -173,7 +173,7 @@ bool UGKQuestSubsystem::CompleteQuest(FName QuestID)
 	QuestStates.FindOrAdd(QuestID) = EGKQuestState::Completed;
 
 	// Concrete implementation of Doc 19 §4: Unlock Codex rewards via DT_HistoricalEvidence
-	UGKCodexSubsystem* CodexSubsystem = UGKCodexSubsystem::Get(this);
+	UGKCodexSubsystem* CodexSubsystem = CodexSubsystemOverride ? CodexSubsystemOverride.Get() : (GetGameInstance() ? GetGameInstance()->GetSubsystem<UGKCodexSubsystem>() : UGKCodexSubsystem::Get(this));
 	for (const FName& EvidenceID : QuestData->CodexRewardIDs)
 	{
 		if (CodexSubsystem)
@@ -221,9 +221,9 @@ UGKQuestDataAsset* UGKQuestSubsystem::GetActiveQuestData() const
 
 TArray<FGKQuestObjective> UGKQuestSubsystem::GetQuestObjectives(FName QuestID) const
 {
-	if (const TArray<FGKQuestObjective>* ObjPtr = RuntimeObjectives.Find(QuestID))
+	if (const FGKQuestObjectiveList* ObjPtr = RuntimeObjectives.Find(QuestID))
 	{
-		return *ObjPtr;
+		return ObjPtr->Objectives;
 	}
 
 	if (UGKQuestDataAsset* QuestData = RegisteredQuests.FindRef(QuestID))

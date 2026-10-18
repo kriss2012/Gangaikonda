@@ -2,7 +2,7 @@
 
 UGKCodexJournalViewModel::UGKCodexJournalViewModel()
 	: SelectedEntry(nullptr)
-	, DetailBorderStyle(EGKCodexBorderStyle::SolidBronze)
+	, DetailBorderStyle(EGKCodexBorderStyle::Solid)
 	, bIsFilterActive(false)
 	, ActiveFilterCategory(EGKEvidenceCategory::Documented)
 {
@@ -93,7 +93,7 @@ void UGKCodexJournalViewModel::UpdateDetailPanel()
 		DetailDatePeriod = FText::GetEmpty();
 		DetailConfidenceText = FText::GetEmpty();
 		DetailDescription = NSLOCTEXT("GKUI", "NoEntrySelected", "No historical record selected.");
-		DetailBorderStyle = EGKCodexBorderStyle::MutedGranite;
+		DetailBorderStyle = EGKCodexBorderStyle::Desaturated;
 		DetailCategoryBadge = FText::GetEmpty();
 	}
 

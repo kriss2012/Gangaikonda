@@ -11,7 +11,7 @@
  * Test: GK.AI.ScheduleTransitions
  * Validates 4-phase daily cycle transitions (Morning -> Afternoon -> Evening -> Night) on Tier 1 named NPCs (Doc 13 §3).
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKAIScheduleTest, "GK.AI.ScheduleTransitions", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKAIScheduleTest, "GK.AI.ScheduleTransitions", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKAIScheduleTest::RunTest(const FString& Parameters)
 {
@@ -51,7 +51,7 @@ bool FGKAIScheduleTest::RunTest(const FString& Parameters)
  * Test: GK.AI.CrowdMemoryProfile
  * Asserts Mass Entity Tier 3 fragment memory budget to guarantee living-world performance target (Doc 13 §2).
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKMCMemoryProfileTest, "GK.AI.CrowdMemoryProfile", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKMCMemoryProfileTest, "GK.AI.CrowdMemoryProfile", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKMCMemoryProfileTest::RunTest(const FString& Parameters)
 {

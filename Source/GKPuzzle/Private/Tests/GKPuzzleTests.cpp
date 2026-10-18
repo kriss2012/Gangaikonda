@@ -9,7 +9,7 @@
  * Test: GK.Puzzle.StoneAlignment_StressMath
  * Validates load-path stress calculations, block rotation, and solve evaluation for Stone Alignment Tier 1 (Doc 09 P01).
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKStoneAlignmentTest, "GK.Puzzle.StoneAlignment_StressMath", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKStoneAlignmentTest, "GK.Puzzle.StoneAlignment_StressMath", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKStoneAlignmentTest::RunTest(const FString& Parameters)
 {
@@ -19,7 +19,7 @@ bool FGKStoneAlignmentTest::RunTest(const FString& Parameters)
 	AGKStoneAlignmentPuzzleActor* StoneActor = World->SpawnActor<AGKStoneAlignmentPuzzleActor>();
 	TestNotNull(TEXT("AGKStoneAlignmentPuzzleActor spawned"), StoneActor);
 
-	TestEqual(TEXT("Initial state is Unsolved"), StoneActor->GetPuzzleState(), EGKPuzzleState::Unsolved);
+	TestEqual(TEXT("Initial state is Unsolved"), StoneActor->CurrentPuzzleState, EGKPuzzleState::Unsolved);
 	TestTrue(TEXT("Initial course has positive load imbalance"), StoneActor->GetTotalCourseImbalance() > 0.0f);
 
 	// Rotate Block 0 (Target = 1, Current = 0): 1 rotation
@@ -40,7 +40,7 @@ bool FGKStoneAlignmentTest::RunTest(const FString& Parameters)
 
 	// Verification
 	TestTrue(TEXT("Total course imbalance is 0.0 when fully aligned"), FMath::IsNearlyZero(StoneActor->GetTotalCourseImbalance()));
-	TestEqual(TEXT("Puzzle transitions to Solved"), StoneActor->GetPuzzleState(), EGKPuzzleState::Solved);
+	TestEqual(TEXT("Puzzle transitions to Solved"), StoneActor->CurrentPuzzleState, EGKPuzzleState::Solved);
 	TestEqual(TEXT("Evidence reward matches G2"), StoneActor->EvidenceRewardID, FName(TEXT("G2")));
 
 	World->DestroyWorld(false);
@@ -52,7 +52,7 @@ bool FGKStoneAlignmentTest::RunTest(const FString& Parameters)
  * Validates deterministic graph propagation, sluice gate sequencing (Stages 1-3), sediment clearing (Stage 4),
  * and hidden inscription chamber trigger (Doc 08 Minutes 18–23, Doc 09 P04/P05).
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKLionWellTest, "GK.Puzzle.LionWell_HydraulicStages", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKLionWellTest, "GK.Puzzle.LionWell_HydraulicStages", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKLionWellTest::RunTest(const FString& Parameters)
 {
@@ -62,7 +62,7 @@ bool FGKLionWellTest::RunTest(const FString& Parameters)
 	AGKLionWellPuzzleActor* LionWell = World->SpawnActor<AGKLionWellPuzzleActor>();
 	TestNotNull(TEXT("AGKLionWellPuzzleActor spawned"), LionWell);
 
-	TestEqual(TEXT("Initial state is Unsolved"), LionWell->GetPuzzleState(), EGKPuzzleState::Unsolved);
+	TestEqual(TEXT("Initial state is Unsolved"), LionWell->CurrentPuzzleState, EGKPuzzleState::Unsolved);
 	TestEqual(TEXT("Initial stage is 1"), LionWell->CurrentStage, 1);
 	TestFalse(TEXT("Hidden chamber initially locked"), LionWell->bHiddenInscriptionRevealed);
 
@@ -83,14 +83,14 @@ bool FGKLionWellTest::RunTest(const FString& Parameters)
 
 	// Lion Well basin still dry due to silt blockage
 	TestFalse(TEXT("Lion Well basin dry before sediment dredge"), LionWell->HydraulicNodes[4].bHasWater);
-	TestFalse(TEXT("Puzzle not yet solved"), LionWell->GetPuzzleState() == EGKPuzzleState::Solved);
+	TestFalse(TEXT("Puzzle not yet solved"), LionWell->CurrentPuzzleState == EGKPuzzleState::Solved);
 
 	// Stage 4: Clear sediment blockage
 	bool bCleared = LionWell->ClearSedimentBlockage();
 	TestTrue(TEXT("Sediment cleared successfully"), bCleared);
 	TestTrue(TEXT("Water reaches Lion Well basin"), LionWell->HydraulicNodes[4].bHasWater);
 	TestTrue(TEXT("Hidden inscription chamber revealed"), LionWell->bHiddenInscriptionRevealed);
-	TestEqual(TEXT("Puzzle state is Solved"), LionWell->GetPuzzleState(), EGKPuzzleState::Solved);
+	TestEqual(TEXT("Puzzle state is Solved"), LionWell->CurrentPuzzleState, EGKPuzzleState::Solved);
 
 	World->DestroyWorld(false);
 	return true;

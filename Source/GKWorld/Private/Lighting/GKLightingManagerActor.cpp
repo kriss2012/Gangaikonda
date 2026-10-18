@@ -16,6 +16,7 @@ AGKLightingManagerActor::AGKLightingManagerActor()
 	SunDirectionalLight = CreateDefaultSubobject<UDirectionalLightComponent>(TEXT("SunDirectionalLight"));
 	SunDirectionalLight->SetupAttachment(RootComp);
 	SunDirectionalLight->bUseTemperature = true;
+	SunDirectionalLight->ForwardShadingPriority = 1;
 
 	SkyLight = CreateDefaultSubobject<USkyLightComponent>(TEXT("SkyLight"));
 	SkyLight->SetupAttachment(RootComp);
@@ -158,8 +159,8 @@ void AGKLightingManagerActor::ApplyPreset(const FGKLightingPreset& Preset)
 
 	if (AtmosphericFog)
 	{
-		AtmosphericFog->SetDensity(Preset.FogDensity);
-		AtmosphericFog->SetHeightFalloff(Preset.FogHeightFalloff);
+		AtmosphericFog->SetFogDensity(Preset.FogDensity);
+		AtmosphericFog->SetFogHeightFalloff(Preset.FogHeightFalloff);
 	}
 
 	if (PostProcessVolume)

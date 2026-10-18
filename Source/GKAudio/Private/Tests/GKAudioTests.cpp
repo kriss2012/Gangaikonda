@@ -10,7 +10,7 @@
  * Test: GK.Audio.SoundscapeTransitionsAndWater
  * Validates dynamic soundscapes and distinct water acoustics per Doc 21 §1.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKSoundscapeTransitionTest, "GK.Audio.SoundscapeTransitionsAndWater", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKSoundscapeTransitionTest, "GK.Audio.SoundscapeTransitionsAndWater", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKSoundscapeTransitionTest::RunTest(const FString& Parameters)
 {
@@ -48,7 +48,7 @@ bool FGKSoundscapeTransitionTest::RunTest(const FString& Parameters)
  * Enforces Doc 21 §3: Everyday exploration leans on diegetic ambience.
  * Music swells are suppressed unless explicitly earned via story milestones or landmark reveals.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKScoreRestraintTest, "GK.Audio.ScoreRestraintRule", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKScoreRestraintTest, "GK.Audio.ScoreRestraintRule", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKScoreRestraintTest::RunTest(const FString& Parameters)
 {
@@ -81,7 +81,7 @@ bool FGKScoreRestraintTest::RunTest(const FString& Parameters)
  * Test: GK.Audio.CinematicTriggerAndHandoff
  * Validates Doc 05 cinematic execution, pre-text cards, and seamless completion handoff.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCinematicTriggerTest, "GK.Audio.CinematicTriggerAndHandoff", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCinematicTriggerTest, "GK.Audio.CinematicTriggerAndHandoff", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKCinematicTriggerTest::RunTest(const FString& Parameters)
 {

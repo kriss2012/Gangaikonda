@@ -9,7 +9,7 @@
  * Test: GK.Core.TypeDefinitions
  * Validates fundamental evidence categories, confidence tiers, and core enums.
  */
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCoreTypesTest, "GK.Core.TypeDefinitions", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGKCoreTypesTest, "GK.Core.TypeDefinitions", EAutomationTestFlags_ApplicationContextMask | EAutomationTestFlags::ProductFilter)
 
 bool FGKCoreTypesTest::RunTest(const FString& Parameters)
 {
