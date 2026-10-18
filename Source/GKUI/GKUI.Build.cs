@@ -16,7 +16,12 @@ public class GKUI : ModuleRules
 			"ModelViewViewModel",
 			"GKCore",
 			"GKCodex",
-			"GKDialogue"
+			"GKDialogue",
+			"GKQuest",
+			"GKCombat",
+			"GKCharacter",
+			"GKWorld",
+			"GKSave"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
