@@ -94,5 +94,5 @@ Source/
 - [x] **STEP 9 — World state & save:** `UGKSaveGame`, construction flags, non-numeric faction reputation, autosave triggers, combat save gating, serialization spike (< 2 KB).
 - [x] **STEP 10 — UI/UX pass:** Minimal HUD (no damage numbers, normalized vitals), Codex border styling per evidence tier + explicit text labels (redundant accessibility coding), Quest Journal with evidence badges, pause menu combat-save gating, accessibility settings (Doc 20, Doc 37).
 - [x] **STEP 11 — Cinematic & audio hooks:** Sequencer trigger hooks (Cinematics 001–004, seamless gameplay-input handoffs, pre-text cards), dynamic soundscapes (construction chiseling/ox carts, subterranean water acoustics), Score Restraint Rule enforcement (Doc 05, Doc 21).
-- [ ] **STEP 12 — Art/lighting/perf pass:** Nanite/Lumen, 30/60 fps targets.
+- [x] **STEP 12 — Art/lighting/perf pass:** Nanite geometry configuration, Lumen GI & Virtual Shadow Maps, motivated lighting presets (Dawn, Noon, Sunset, Act 4 Ganga overcast per Doc 34), gold accent restraint (Doc 17 §8), 30 fps floor / 60 fps target performance budget specification (Doc 01 §35).
 - [ ] **STEP 13 — QA & historical audit:** Doc 38/39 compliance, verification of all claims against Doc 03.
