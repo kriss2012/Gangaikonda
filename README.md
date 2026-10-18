@@ -91,8 +91,8 @@ Source/
 - [x] **STEP 6 — Puzzles:** Stone Alignment T1 & Lion Well 1–4.
 - [x] **STEP 7 — NPC living world:** Schedules, Mass Entity crowds.
 - [x] **STEP 8 — Stealth & combat encounter:** Suspicion states, sword/shield/parry/dodge, no damage numbers.
-- [ ] **STEP 9 — World state & save:** `UGKSaveGame`, construction flags.
-- [ ] **STEP 10 — UI/UX pass:** Minimal HUD, Codex border styling + text labels.
+- [x] **STEP 9 — World state & save:** `UGKSaveGame`, construction flags, non-numeric faction reputation, autosave triggers, combat save gating, serialization spike (< 2 KB).
+- [x] **STEP 10 — UI/UX pass:** Minimal HUD (no damage numbers, normalized vitals), Codex border styling per evidence tier + explicit text labels (redundant accessibility coding), Quest Journal with evidence badges, pause menu combat-save gating, accessibility settings (Doc 20, Doc 37).
 - [ ] **STEP 11 — Cinematic & audio hooks:** Sequencer hooks, ambient soundscapes.
 - [ ] **STEP 12 — Art/lighting/perf pass:** Nanite/Lumen, 30/60 fps targets.
 - [ ] **STEP 13 — QA & historical audit:** Doc 38/39 compliance, verification of all claims against Doc 03.
