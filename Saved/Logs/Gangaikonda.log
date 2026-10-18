@@ -2063,3 +2063,136 @@ LogConfig: Set CVar [[r.VRS.ContrastAdaptiveShading:1]]
 
 [2026.10.18-18.11.27:077][  0]LogPython: Display: Running start-up script C:/Program Files/Epic Games/UE_5.8/Engine/Plugins/Animation/ControlRig/Content/Python/init_unreal.py... took 31.301 ms (total: 231.575 ms)
 [2026.10.18-18.11.27:089][  0]LogLiveCoding: Display: LiveCodingConsole Arguments: GangaikondaEditor Win64 Development
+[2026.10.18-18.11.27:752][  3]LogSlate: Display: Synchronously lazy loading font file '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' with subface index 0 in Render thread.
+[2026.10.18-18.11.27:752][  3]LogSlate: Display: Took 0.000406 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K) on Render thread.
+[2026.10.18-18.11.27:752][  3]LogSlate: Display: Freetype font face in memory successfully created with synchronously loaded raw font file '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' subface 0 in Render thread.
+[2026.10.18-18.11.27:752][  3]LogSlate: Display: Font face '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' subface index 0 successfully added to font face map in Render thread.
+[2026.10.18-18.11.27:846][  4]LogSourceControl: Uncontrolled asset discovery finished in 0.968372 seconds (Found 8914 uncontrolled assets)
+[2026.10.18-18.11.27:867][  4]LogD3D12RHI: Waited for PSO creation for 100.000000ms
+[2026.10.18-18.11.28:159][  5]LogAssetRegistry: Display: Asset registry cache written as 121.4 MiB to ../../../../../../D Drive/Gangaikonda/Intermediate/CachedAssetRegistry/CachedAssetRegistry_*.ref
+[2026.10.18-18.11.28:159][  5]LogAssetRegistry: Display: CleanupOrphanedCacheFiles (PostWrite): 1 .ref files found, 1 referenced binaries
+[2026.10.18-18.11.28:159][  5]LogAssetRegistry: Display:   CachedAssetRegistry_0_71B49C6649D5F8B3896D6F8E82D7E3F1.bin: deleted (orphaned, unreferenced by any .ref)
+[2026.10.18-18.11.28:159][  5]LogAssetRegistry: Display: CleanupOrphanedCacheFiles: 2 total binaries, 1 referenced (kept), 0 old-style pre-migration (kept), 1 orphans deleted, 0 orphans locked (kept)
+[2026.10.18-18.11.41:457][195]LogSlate: Display: Synchronously lazy loading font file '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' with subface index 0 in Game thread.
+[2026.10.18-18.11.41:457][195]LogSlate: Display: Took 0.000647 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K) on Game thread.
+[2026.10.18-18.11.41:457][195]LogSlate: Display: Freetype font face in memory successfully created with synchronously loaded raw font file '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' subface 0 in Game thread.
+[2026.10.18-18.11.41:457][195]LogSlate: Display: Font face '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' subface index 0 successfully added to font face map in Game thread.
+[2026.10.18-18.11.42:441][251]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2026.10.18-18.11.42:457][251]LogCameraSystemEditor: No camera objects needed building (inspected 0 objects)
+[2026.10.18-18.11.42:459][251]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2026.10.18-18.11.42:468][251]LogOnline: OSS: Created online subsystem instance for: NULL
+[2026.10.18-18.11.42:468][251]LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for type [NULL]
+[2026.10.18-18.11.42:468][251]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_Test_Zone5_Greybox
+[2026.10.18-18.11.42:481][251]LogPlayLevel: PIE: StaticDuplicateObject took: (0.012386s)
+[2026.10.18-18.11.42:481][251]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/Test_Zone5_Greybox.Test_Zone5_Greybox to /Game/Maps/UEDPIE_0_Test_Zone5_Greybox.Test_Zone5_Greybox (0.012471s)
+[2026.10.18-18.11.42:546][251]LogUObjectHash: Compacting FUObjectHashTables data took   0.54ms
+[2026.10.18-18.11.42:549][251]LogStreaming: Display: FlushAsyncLoading(363): 1 QueuedPackages, 0 AsyncPackages
+[2026.10.18-18.11.42:549][251]LogUObjectGlobals: Warning: Failed to find object 'Object /Game/Data/DataTables/DT_HistoricalEvidence.DT_HistoricalEvidence'
+[2026.10.18-18.11.42:550][251]LogGKCodex: Warning: DT_HistoricalEvidence could not be loaded at default path /Game/Data/DataTables/DT_HistoricalEvidence.DT_HistoricalEvidence
+[2026.10.18-18.11.42:550][251]LogGKCodex: UGKCodexSubsystem initialized. Evidence table resolved.
+[2026.10.18-18.11.42:550][251]LogGKQuest: UGKQuestSubsystem initialized.
+[2026.10.18-18.11.42:550][251]LogGKWorld: UGKWorldStateSubsystem initialized with default vertical slice state.
+[2026.10.18-18.11.42:550][251]LogGKSave: UGKSaveSubsystem initialized. Ready for Doc 18 §6 persistence.
+[2026.10.18-18.11.42:551][251]LogGKAudio: Soundscape transitioned to [Zone5_Gangaikonda]. Construction intensity: 0.85
+[2026.10.18-18.11.42:551][251]LogGKAudio: UGKAudioSubsystem initialized. Score Restraint Rule active.
+[2026.10.18-18.11.42:551][251]LogChaosDD: Creating Chaos Debug Draw Scene for world Test_Zone5_Greybox
+[2026.10.18-18.11.42:559][251]LogPlayLevel: PIE: World Init took: (0.008681s)
+[2026.10.18-18.11.42:559][251]LogAudio: Display: Creating Audio Device:                 Id: 2, Scope: Unique, Realtime: True
+[2026.10.18-18.11.42:559][251]LogAudioMixer: Display: bUseRenderScheduler set to true.
+[2026.10.18-18.11.42:559][251]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2026.10.18-18.11.42:559][251]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2026.10.18-18.11.42:559][251]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2026.10.18-18.11.42:560][251]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2026.10.18-18.11.42:560][251]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2026.10.18-18.11.42:560][251]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2026.10.18-18.11.42:560][251]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2026.10.18-18.11.42:560][251]LogAudio: Display: AudioDevice MaxSources: 32
+[2026.10.18-18.11.42:560][251]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2026.10.18-18.11.42:560][251]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2026.10.18-18.11.42:560][251]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2026.10.18-18.11.42:560][251]LogAudioEnumeration: Display: Refreshing FWindowsMMDeviceCache
+[2026.10.18-18.11.42:563][251]LogAudioEnumeration: Display: FWindowsMMDeviceCache: Default Render Role='Console', Device='Speakers (2- Realtek(R) Audio)'
+[2026.10.18-18.11.42:563][251]LogAudioEnumeration: Display: FWindowsMMDeviceCache: Default Capture Role='Console', Device='Microphone Array (2- Intel® Smart Sound Technology for Digital Microphones)'
+[2026.10.18-18.11.42:564][251]LogAudioEnumeration: Display: FWindowsMMDeviceCache: Default Render Role='Multimedia', Device='Speakers (2- Realtek(R) Audio)'
+[2026.10.18-18.11.42:564][251]LogAudioEnumeration: Display: FWindowsMMDeviceCache: Default Capture Role='Multimedia', Device='Microphone Array (2- Intel® Smart Sound Technology for Digital Microphones)'
+[2026.10.18-18.11.42:564][251]LogAudioEnumeration: Display: FWindowsMMDeviceCache: Default Render Role='Communications', Device='Speakers (2- Realtek(R) Audio)'
+[2026.10.18-18.11.42:565][251]LogAudioEnumeration: Display: FWindowsMMDeviceCache: Default Capture Role='Communications', Device='Microphone Array (2- Intel® Smart Sound Technology for Digital Microphones)'
+[2026.10.18-18.11.42:571][251]LogAudioMixerWasapi: Display: FWasapiServiceWatcher initial state: Audiosrv=RUNNING, AudioEndpointBuilder=RUNNING
+[2026.10.18-18.11.42:571][251]LogAudioMixerWasapi: Display: FWasapiServiceWatcher started.
+[2026.10.18-18.11.42:571][251]LogAudioMixer: Display: Initializing audio mixer using platform API: 'WASAPIMixer'
+[2026.10.18-18.11.42:572][251]LogAudioMixerWasapi: FAudioMixerWasapiRenderStream::InitializeHardware DefaultDevicePeriod: 480 requesting buffer size: 1920
+[2026.10.18-18.11.42:577][251]LogAudioMixerWasapi: Display: FAudioMixerWasapiRenderStream::InitializeHardware audio mixer requested num channels: 2, Wasapi render stream hardware supports num channels: 2
+[2026.10.18-18.11.42:577][251]LogAudioMixerWasapi: Display: FAudioMixerWasapiRenderStream::InitializeHardware succeeded with sample rate: 48000, buffer period: 1024
+[2026.10.18-18.11.42:577][251]LogAudioMixer: Display: FAudioMixerWasapi initialized: SampleRate=48000 NumChannels=2 NumDirectOutChannels=0 bIsAggregateDevice=0 StreamParams.Num()=1
+[2026.10.18-18.11.42:577][251]LogAudioMixer: Display: Using Audio Hardware Device Speakers (2- Realtek(R) Audio)
+[2026.10.18-18.11.42:577][251]LogAudioMixer: Display: Initializing Sound Submixes...
+[2026.10.18-18.11.42:577][251]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2026.10.18-18.11.42:577][251]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2026.10.18-18.11.42:578][251]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=2
+[2026.10.18-18.11.42:580][251]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=2
+[2026.10.18-18.11.42:583][251]LogInit: FAudioDevice initialized with ID 2.
+[2026.10.18-18.11.42:583][251]LogAudio: Display: Audio Device (ID: 2) registered with world 'Test_Zone5_Greybox'.
+[2026.10.18-18.11.42:583][251]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 2
+[2026.10.18-18.11.42:586][251]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2026.10.18-18.11.42:763][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonCharacter.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonCharacter as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C - both will fail to load
+[2026.10.18-18.11.42:763][251]LogLinker: Warning: Unable to load Default__BP_ThirdPersonCharacter_C with outer Package /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter because its class (BP_ThirdPersonCharacter_C) does not exist
+[2026.10.18-18.11.42:763][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonCharacter.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonCharacter as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C - both will fail to load
+[2026.10.18-18.11.42:763][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonCharacter.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonCharacter as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C - both will fail to load
+[2026.10.18-18.11.42:763][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonCharacter.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonCharacter as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C - both will fail to load
+[2026.10.18-18.11.42:763][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonCharacter.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonCharacter as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C - both will fail to load
+[2026.10.18-18.11.42:763][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonCharacter.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonCharacter as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C - both will fail to load
+[2026.10.18-18.11.42:763][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonCharacter.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonCharacter as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C - both will fail to load
+[2026.10.18-18.11.42:763][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonCharacter.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonCharacter as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C - both will fail to load
+[2026.10.18-18.11.42:763][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonCharacter.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonCharacter as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C - both will fail to load
+[2026.10.18-18.11.42:802][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonPlayerController.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonPlayerController as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController.BP_ThirdPersonPlayerController_C - both will fail to load
+[2026.10.18-18.11.42:802][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonPlayerController.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonPlayerController as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController.BP_ThirdPersonPlayerController_C - both will fail to load
+[2026.10.18-18.11.42:802][251]LogLinker: Warning: Unable to load Default__BP_ThirdPersonPlayerController_C with outer Package /Game/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController because its class (BP_ThirdPersonPlayerController_C) does not exist
+[2026.10.18-18.11.42:802][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonPlayerController.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonPlayerController as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController.BP_ThirdPersonPlayerController_C - both will fail to load
+[2026.10.18-18.11.42:802][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonPlayerController.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonPlayerController as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController.BP_ThirdPersonPlayerController_C - both will fail to load
+[2026.10.18-18.11.42:802][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonGameMode.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonGameMode as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.BP_ThirdPersonGameMode_C - both will fail to load
+[2026.10.18-18.11.42:802][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonGameMode.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonGameMode as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.BP_ThirdPersonGameMode_C - both will fail to load
+[2026.10.18-18.11.42:802][251]LogLinker: Warning: Unable to load Default__BP_ThirdPersonGameMode_C with outer Package /Game/ThirdPerson/Blueprints/BP_ThirdPersonGameMode because its class (BP_ThirdPersonGameMode_C) does not exist
+[2026.10.18-18.11.42:802][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonGameMode.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonGameMode as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.BP_ThirdPersonGameMode_C - both will fail to load
+[2026.10.18-18.11.42:802][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonGameMode.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonGameMode as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.BP_ThirdPersonGameMode_C - both will fail to load
+[2026.10.18-18.11.42:802][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonCharacter.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonCharacter as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C - both will fail to load
+[2026.10.18-18.11.42:802][251]LogBlueprint: Warning: FMemberReference::ResolveMember (DoLook) bSelfContext == true, but no scope supplied!
+[2026.10.18-18.11.42:802][251]LogBlueprint: Warning: FMemberReference::ResolveMember (DoJumpEnd) bSelfContext == true, but no scope supplied!
+[2026.10.18-18.11.42:802][251]LogBlueprint: Warning: FMemberReference::ResolveMember (DoJumpStart) bSelfContext == true, but no scope supplied!
+[2026.10.18-18.11.42:802][251]LogBlueprint: Warning: FMemberReference::ResolveMember (DoMove) bSelfContext == true, but no scope supplied!
+[2026.10.18-18.11.42:803][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonPlayerController.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonPlayerController as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController.BP_ThirdPersonPlayerController_C - both will fail to load
+[2026.10.18-18.11.42:803][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonGameMode.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonGameMode as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.BP_ThirdPersonGameMode_C - both will fail to load
+[2026.10.18-18.11.43:080][251]LogLinker: Warning: [AssetLog] C:\D Drive\Gangaikonda\Content\ThirdPerson\Blueprints\BP_ThirdPersonGameMode.uasset: CreateExport: Failed to load Class /Script/GKCore.TP_ThirdPersonGameMode as Parent for BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.BP_ThirdPersonGameMode_C - both will fail to load
+[2026.10.18-18.11.43:080][251]LogUObjectGlobals: Warning: Failed to find object 'Class /Game/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.BP_ThirdPersonGameMode_C'
+[2026.10.18-18.11.43:080][251]LogLoad: Game class is 'GameModeBase'
+[2026.10.18-18.11.43:086][251]LogWorld: Bringing World /Game/Maps/UEDPIE_0_Test_Zone5_Greybox.Test_Zone5_Greybox up for play (max tick rate 60) at 2026.10.18-23.41.43
+[2026.10.18-18.11.43:088][251]LogWorld: Bringing up level for play took: 0.008304
+[2026.10.18-18.11.43:093][251]LogOnline: OSS: Created online subsystem instance for: :Context_1
+[2026.10.18-18.11.43:101][251]LogWindows: WindowsPlatformFeatures enabled
+[2026.10.18-18.11.43:102][251]LogEnhancedInput: Enhanced Input local player subsystem has initialized the user settings!
+[2026.10.18-18.11.43:102][251]LogModuleManager: InternalLoadLibrary: 'Voice' ('C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor-Voice.dll')
+[2026.10.18-18.11.43:104][251]LogModuleManager: InternalLoadLibrary: 'MovieSceneCapture' ('C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor-MovieSceneCapture.dll')
+[2026.10.18-18.11.43:122][251]LogGKWorld: Motivated lighting scenario applied: [2]. Sun Lux: 95000, Temp: 6200K
+[2026.10.18-18.11.43:126][251]PIE: Server logged in
+[2026.10.18-18.11.43:128][251]PIE: Play in editor total start time 0.674 seconds.
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'Arrow': BP_ThirdPersonCharacter_C /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.Default__BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'FollowCamera': BP_ThirdPersonCharacter_C /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.Default__BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'CollisionCylinder': BP_ThirdPersonCharacter_C /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.Default__BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'CharMoveComp': BP_ThirdPersonCharacter_C /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.Default__BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'ExecuteUbergraph_BP_ThirdPersonCharacter': BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'Primary Thumbstick': BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'Secondary Thumbstick': BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'Touch Jump End': BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'Touch Jump Start': BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'DefaultSceneRoot_GEN_VARIABLE': BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'SimpleConstructionScript_0': BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'SCS_Node_0': SimpleConstructionScript /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C:SimpleConstructionScript_0
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'CharacterMesh0': BP_ThirdPersonCharacter_C /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.Default__BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'CameraBoom': BP_ThirdPersonCharacter_C /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.Default__BP_ThirdPersonCharacter_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'DefaultSceneRoot_GEN_VARIABLE': BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController.BP_ThirdPersonPlayerController_C
+[2026.10.18-18.11.43:174][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'TransformComponent0': BP_ThirdPersonPlayerController_C /Game/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController.Default__BP_ThirdPersonPlayerController_C
+[2026.10.18-18.11.43:175][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'SimpleConstructionScript_0': BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController.BP_ThirdPersonPlayerController_C
+[2026.10.18-18.11.43:175][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'SCS_Node_0': SimpleConstructionScript /Game/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController.BP_ThirdPersonPlayerController_C:SimpleConstructionScript_0
+[2026.10.18-18.11.43:175][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'DefaultSceneRoot_GEN_VARIABLE': BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.BP_ThirdPersonGameMode_C
+[2026.10.18-18.11.43:175][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'SimpleConstructionScript_0': BlueprintGeneratedClass /Game/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.BP_ThirdPersonGameMode_C
+[2026.10.18-18.11.43:175][252]LoadErrors: Warning: CreateExport: Failed to load Outer for resource 'SCS_Node_0': SimpleConstructionScript /Game/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.BP_ThirdPersonGameMode_C:SimpleConstructionScript_0
+[2026.10.18-18.12.20:906][508]Cmd: DebugManager.CycleToPreviousColumn
