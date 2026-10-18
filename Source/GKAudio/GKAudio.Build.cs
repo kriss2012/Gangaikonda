@@ -10,7 +10,13 @@ public class GKAudio : ModuleRules
 			"Core",
 			"CoreUObject",
 			"Engine",
-			"GKCore"
+			"GKCore",
+			"GKQuest",
+			"GKCombat",
+			"GKCodex",
+			"GKWorld",
+			"MovieScene",
+			"LevelSequence"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
