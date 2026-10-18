@@ -90,7 +90,7 @@ Source/
 - [x] **STEP 5 — Quest subsystem:** Quest state machine, objectives, slice beats 1–13.
 - [x] **STEP 6 — Puzzles:** Stone Alignment T1 & Lion Well 1–4.
 - [x] **STEP 7 — NPC living world:** Schedules, Mass Entity crowds.
-- [ ] **STEP 8 — Stealth & combat encounter:** Suspicion states, sword/shield/parry/dodge, no damage numbers.
+- [x] **STEP 8 — Stealth & combat encounter:** Suspicion states, sword/shield/parry/dodge, no damage numbers.
 - [ ] **STEP 9 — World state & save:** `UGKSaveGame`, construction flags.
 - [ ] **STEP 10 — UI/UX pass:** Minimal HUD, Codex border styling + text labels.
 - [ ] **STEP 11 — Cinematic & audio hooks:** Sequencer hooks, ambient soundscapes.
