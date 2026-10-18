@@ -87,7 +87,7 @@ Source/
 - [x] **STEP 2 — Character & exploration:** Arulan 3rd person locomotion, scaffold climbing, interaction prompt, greybox test map Zone 5.
 - [x] **STEP 3 — Investigation & inscription system:** Inscription decoding Tier 1, reference chart, historical record notification.
 - [x] **STEP 4 — Dialogue & memory:** Branching runtime, bounded memory flags, Scholar & Architect dialogue.
-- [ ] **STEP 5 — Quest subsystem:** Quest state machine, objectives, slice beats 1–13.
+- [x] **STEP 5 — Quest subsystem:** Quest state machine, objectives, slice beats 1–13.
 - [ ] **STEP 6 — Puzzles:** Stone Alignment T1 & Lion Well 1–4.
 - [ ] **STEP 7 — NPC living world:** Schedules, Mass Entity crowds.
 - [ ] **STEP 8 — Stealth & combat encounter:** Suspicion states, sword/shield/parry/dodge, no damage numbers.
