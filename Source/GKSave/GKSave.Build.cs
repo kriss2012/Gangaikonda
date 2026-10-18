@@ -10,7 +10,12 @@ public class GKSave : ModuleRules
 			"Core",
 			"CoreUObject",
 			"Engine",
-			"GKCore"
+			"GKCore",
+			"GKCodex",
+			"GKQuest",
+			"GKWorld",
+			"GKCharacter",
+			"GKPuzzle"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
