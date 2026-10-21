@@ -17,7 +17,9 @@ def build_authentic_zone5_site():
     all_actors = editor_actor_subsystem.get_all_level_actors()
     keep_classes = [
         "GKLightingManagerActor", "GKLionWellPuzzleActor", 
-        "GKStoneAlignmentPuzzleActor", "SkyAtmosphere", "SkyLight", "ExponentialHeightFog"
+        "GKStoneAlignmentPuzzleActor", "GKInscriptionActor",
+        "GKScaffoldVolume", "GKEnemyCharacter",
+        "SkyAtmosphere", "SkyLight", "ExponentialHeightFog"
     ]
     for act in all_actors:
         if act:
@@ -110,7 +112,7 @@ def build_authentic_zone5_site():
                 comp.set_text_render_color(text_color)
                 comp.set_world_size(size)
                 comp.set_horizontal_alignment(unreal.HorizTextAligment.EHTA_CENTER)
-            actor.set_actor_rotation(unreal.Rotator(0, -90, 0), False)
+            actor.set_actor_rotation(unreal.Rotator(pitch=0.0, yaw=-90.0, roll=0.0), False)
         return actor
 
     # =========================================================================
@@ -207,6 +209,18 @@ def build_authentic_zone5_site():
     spawn_prop("Scaffold_Hoisted_Stone", unreal.Vector(vx, vy - scaff_w - 60.0, scaff_base_z + 500.0),
                unreal.Rotator(0, 15, 0), unreal.Vector(1.2, 1.2, 0.9), cube_mesh, materials["M_Sandstone"])
 
+    # Interactive Scaffold Climb Volume (Doc 29 & Beat 07)
+    scaff_cls = unreal.load_class(None, "/Script/GKExploration.GKScaffoldVolume")
+    if scaff_cls:
+        scaff_act = editor_actor_subsystem.spawn_actor_from_class(scaff_cls, unreal.Vector(vx, vy - scaff_w, scaff_base_z + (scaff_h / 2.0)))
+        if scaff_act:
+            scaff_act.set_actor_label("GKScaffoldVolume_MainTower")
+            scaff_act.set_editor_property("climb_facing_normal", unreal.Vector(0.0, -1.0, 0.0))
+            scaff_act.set_editor_property("top_ledge_height", scaff_h)
+            if hasattr(scaff_act, "climb_trigger_box") and scaff_act.climb_trigger_box:
+                scaff_act.climb_trigger_box.set_box_extent(unreal.Vector(scaff_w, 150.0, scaff_h / 2.0), True)
+            unreal.log("Spawned interactive GKScaffoldVolume on scaffolding tower.")
+
     # =========================================================================
     # D. THE GREAT INCLINED TIMBER & STONE CONSTRUCTION RAMP
     # =========================================================================
@@ -266,8 +280,18 @@ def build_authentic_zone5_site():
     tent_x, tent_y = 1000.0, -200.0
     spawn_animated_npc("NPC_RoyalEpigraphist", unreal.Vector(tent_x, tent_y - 65.0, 0.0), unreal.Rotator(0, 90, 0), quinn_mesh, anim_idle)
 
-    # 7. Ambush Guard / Vanguard Soldier (Combat ready)
-    spawn_animated_npc("NPC_AmbushGuard", unreal.Vector(0.0, 450.0, 0.0), unreal.Rotator(0, -90, 0), manny_mesh, anim_idle)
+    # 7. Ambush Guard / Vanguard Soldier (Doc 10 §3 & Beat 10 Combat Encounter)
+    enemy_cls = unreal.load_class(None, "/Script/GKCombat.GKEnemyCharacter")
+    if enemy_cls:
+        enemy_act = editor_actor_subsystem.spawn_actor_from_class(enemy_cls, unreal.Vector(0.0, 450.0, 30.0))
+        if enemy_act:
+            enemy_act.set_actor_label("GKEnemyCharacter_AmbushSoldier")
+            enemy_act.set_actor_rotation(unreal.Rotator(0, -90, 0), False)
+            if hasattr(enemy_act, "flee_health_percentage"):
+                enemy_act.set_editor_property("flee_health_percentage", 0.25)
+            unreal.log("Spawned interactive GKEnemyCharacter at gateway.")
+    else:
+        spawn_animated_npc("NPC_AmbushGuard", unreal.Vector(0.0, 450.0, 0.0), unreal.Rotator(0, -90, 0), manny_mesh, anim_idle)
 
     # =========================================================================
     # F. STONE CUTTER YARDS & MONOLITH HAULING SLEDGE
@@ -300,8 +324,17 @@ def build_authentic_zone5_site():
                    unreal.Vector(0.22, 0.22, 2.0), cylinder_mesh, materials["M_Timber"])
     spawn_prop("Scholar_Desk", unreal.Vector(tent_x, tent_y, 45.0), unreal.Rotator(0, 0, 0), 
                unreal.Vector(1.9, 1.1, 0.8), cube_mesh, materials["M_Timber"])
-    spawn_prop("P10_Inscription_StoneSlab", unreal.Vector(tent_x, tent_y + 85.0, 68.0), unreal.Rotator(15, 0, 0), 
-               unreal.Vector(1.3, 0.18, 1.05), cube_mesh, materials["M_Gold"])
+    # Interactive Inscription Rubbing Stone Slab (P10 Foundation Inscription Puzzle)
+    inscr_cls = unreal.load_class(None, "/Script/GKPuzzle.GKInscriptionActor")
+    if inscr_cls:
+        inscr_act = editor_actor_subsystem.spawn_actor_from_class(inscr_cls, unreal.Vector(tent_x, tent_y + 85.0, 70.0))
+        if inscr_act:
+            inscr_act.set_actor_label("GKInscriptionActor_P10_FoundationStone")
+            inscr_act.set_actor_rotation(unreal.Rotator(15, 0, 0), False)
+            unreal.log("Spawned interactive GKInscriptionActor inside Archive Tent.")
+    else:
+        spawn_prop("P10_Inscription_StoneSlab", unreal.Vector(tent_x, tent_y + 85.0, 68.0), unreal.Rotator(15, 0, 0), 
+                   unreal.Vector(1.3, 0.18, 1.05), cube_mesh, materials["M_Gold"])
 
     # =========================================================================
     # H. LION WELL HYDRAULIC STEPWELL (P04 PUZZLE COMPLEX)
@@ -367,23 +400,19 @@ def build_authentic_zone5_site():
     # =========================================================================
     # L. PLAYABLE CHARACTER WITH AUTOMATIC POSSESSION & THIRD-PERSON CAMERA
     # =========================================================================
-    spawn_loc = unreal.Vector(0.0, -700.0, 30.0)
+    # Clean up any existing player spawns or duplicate characters
+    for a in editor_actor_subsystem.get_all_level_actors():
+        if a.get_actor_label() in ["PlayerStart_Main", "BP_ThirdPersonCharacter_Playable", "PlayerStart_1", "BP_ThirdPersonCharacter_C_0"]:
+            editor_actor_subsystem.destroy_actor(a)
 
-    # PlayerStart
+    spawn_loc = unreal.Vector(0.0, -700.0, 150.0)
+
+    # Place single PlayerStart oriented North (yaw=90) towards the Brihadisvara Vimana
     p_start = editor_actor_subsystem.spawn_actor_from_class(unreal.PlayerStart, spawn_loc)
     if p_start:
         p_start.set_actor_label("PlayerStart_Main")
-        p_start.set_actor_rotation(unreal.Rotator(0, 90, 0), False)
-
-    # Place BP_ThirdPersonCharacter and force auto_possess_player to Player0
-    bp_char_cls = unreal.load_class(None, "/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter_C")
-    if bp_char_cls:
-        char_actor = editor_actor_subsystem.spawn_actor_from_class(bp_char_cls, unreal.Vector(0.0, -650.0, 50.0))
-        if char_actor:
-            char_actor.set_actor_label("BP_ThirdPersonCharacter_Playable")
-            char_actor.set_actor_rotation(unreal.Rotator(0, 90, 0), False)
-            char_actor.set_editor_property("auto_possess_player", unreal.AutoReceiveInput.PLAYER0)
-            unreal.log("Configured BP_ThirdPersonCharacter with AutoPossessPlayer=Player0.")
+        p_start.set_actor_rotation(unreal.Rotator(pitch=0.0, yaw=90.0, roll=0.0), False)
+        unreal.log("Configured PlayerStart_Main at (0, -700, 150) facing North (yaw=90).")
 
     # Save Level
     saved = level_editor_subsystem.save_current_level()
