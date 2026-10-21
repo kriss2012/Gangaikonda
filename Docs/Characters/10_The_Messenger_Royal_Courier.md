@@ -1,5 +1,7 @@
 # Character Visual Dossier: The Messenger (Royal Courier / Othai-Thoothan)
 
+![The Messenger Royal Courier](image-3.png)
+
 - **Character ID:** CH-10 · **Canonical Tier:** Tier B (Fictional built on documented courier network)
 - **Role:** Fast Royal Dispatch Rider & Frontier Scout
 - **Evidence Tag:** `[PLAUSIBLE RECONSTRUCTION]` (Built on documented Chola imperial highway and post-station network per Doc 03 D1)
