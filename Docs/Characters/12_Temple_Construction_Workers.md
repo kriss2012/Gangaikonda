@@ -1,5 +1,7 @@
 # Character Visual Dossier: Temple Construction Workers & Stone Masons (Kalthatchar & Uzhavar)
 
+![Temple Construction Workers and Stone Masons](image%20copy%207.png)
+
 - **Character ID:** CH-12 · **Canonical Tier:** Tier B (Civil Labor Archetype)
 - **Role:** Granite Stone Masons, Sledge Haulers, and Ramp Construction Laborers
 - **Evidence Tag:** `[HISTORICALLY ATTESTED]` (Built on documented workforce records for Thanjavur and Gangaikondacholapuram Brihadisvara Vimana construction per Doc 03 C1, G2)
