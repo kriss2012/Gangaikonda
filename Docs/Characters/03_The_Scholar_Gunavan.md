@@ -1,5 +1,7 @@
 # Character Visual Dossier: The Scholar (Gunavan / Chief Epigraphist)
 
+![The Scholar Gunavan](image%20copy%202.png)
+
 - **Character ID:** CH-03 · **Canonical Tier:** Tier B (Fictional Character built on documented scribal class)
 - **Role:** Royal Epigraphist, Archivist, and Arulan's Primary Intellectual Mentor
 - **Evidence Tag:** `[PLAUSIBLE RECONSTRUCTION]` (Built on documented existence of Chola epigraphic draftsmen and royal archivists per Doc 03 H1–H2)
@@ -20,7 +22,7 @@
 - **Lower Garment (Veshti):** Simple, dignified off-white handloom cotton *Veshti* draped long to the ankles with a narrow unbleached madder red selvedge border.
 - **Upper Garment (Uttariya):** Large unbleached cotton wrap draped across chest and shoulders, occasionally pulled up over the head as protection against scorching midday construction sun.
 - **Hands:** Ink and charcoal smudges permanently staining the tips of thumb and index fingers.
-- **Footwear:** Wooden strap sandals (*Padukas*) left neatly outside the Archive tent.
+- **Footwear:** Leather strapped sandals (*Padukas*) for traversing rough temple courtyard flagstones.
 
 ---
 
@@ -30,10 +32,4 @@
   2. Rice-flour paste and charcoal blocks for wet-paper squeezes.
   3. Pre-cut palm leaf bundles (*Olai chuvadi*) bound with brass cords.
   4. Brass magnifying reading lens in a protective horn case.
-- **Neck Ornaments:** Single strand of five-faced Rudraksha beads (*Panchamukhi*) on a silk thread.
-
----
-
-## 4. Visual Prompt Reference (For Image Generation / Concept Art)
-> **Midjourney / Stable Diffusion Prompt Reference:**
-> *"Full body portrait of Gunavan the Chola Scholar Epigraphist, 55-year-old dignified South Indian scholar, thoughtful intellectual expression with intelligent dark eyes, grey-white trimmed beard, receding silver hair in traditional scholar knot, vibhuti ash on forehead. Wearing traditional off-white handwoven cotton veshti and unbleached cotton shawl over shoulders, ink-stained fingers. Holding an iron stylus and a palm leaf manuscript inscribed with Chola Tamil Grantha script, seated in an open-sided canvas archive tent with stone rubbings hanging in background, soft natural warm light. Authentic 11th century historical AAA game concept art."*
+- **Neck Ornaments:** Single strand of five-faced Rudraksha beads (*Panchamukhi*) on a silk thread with a bronze pendant.
