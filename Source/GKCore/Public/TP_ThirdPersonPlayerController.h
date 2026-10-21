@@ -11,4 +11,7 @@ class ATP_ThirdPersonPlayerController : public APlayerController
 
 public:
 	ATP_ThirdPersonPlayerController();
+
+protected:
+	virtual void BeginPlay() override;
 };
