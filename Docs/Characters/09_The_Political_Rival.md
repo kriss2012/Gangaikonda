@@ -1,5 +1,7 @@
 # Character Visual Dossier: The Political Rival (Court Aristocrat)
 
+![The Political Rival Court Aristocrat](image-2.png)
+
 - **Character ID:** CH-09 · **Canonical Tier:** Tier B (Fictional Court Politician)
 - **Role:** Ambitious Courtier & Aristocratic Faction Leader
 - **Evidence Tag:** `[FICTIONAL]` (Contrasts with the Antagonist's genuine conviction; represents opportunistic careerism in the imperial court)
