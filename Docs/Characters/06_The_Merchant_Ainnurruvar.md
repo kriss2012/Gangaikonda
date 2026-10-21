@@ -1,5 +1,7 @@
 # Character Visual Dossier: The Merchant (Ainnurruvar Guild Leader)
 
+![The Merchant Ainnurruvar Guild Leader](image%20copy%205.png)
+
 - **Character ID:** CH-06 · **Canonical Tier:** Tier B (Fictional built on documented merchant guilds)
 - **Role:** High Representative of the *Tisai-Aayirathu-Ainnurruvar* (The Five Hundred of the Thousand Directions Trans-Oceanic Merchant Guild)
 - **Evidence Tag:** `[PLAUSIBLE RECONSTRUCTION]` (Built on documented Ainnurruvar and Manigramam trade guilds per Doc 03 E1)
