@@ -7,7 +7,10 @@
 #include "GameFramework/Controller.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "InputMappingContext.h"
+#include "InputAction.h"
 #include "InputActionValue.h"
+#include "UObject/ConstructorHelpers.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -22,26 +25,100 @@ ATP_ThirdPersonCharacter::ATP_ThirdPersonCharacter()
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
 
-	GetCharacterMovement()->JumpZVelocity = 700.f;
-	GetCharacterMovement()->AirControl = 0.35f;
-	GetCharacterMovement()->MaxWalkSpeed = 500.f;
-	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
-	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
-	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
+	GetCharacterMovement()->GravityScale = 1.65f;
+	GetCharacterMovement()->JumpZVelocity = 560.f;
+	GetCharacterMovement()->AirControl = 0.45f;
+	GetCharacterMovement()->AirControlBoostMultiplier = 1.25f;
+	GetCharacterMovement()->FallingLateralFriction = 3.0f;
+	GetCharacterMovement()->MaxWalkSpeed = 550.f;
+	GetCharacterMovement()->MaxAcceleration = 2400.f;
+	GetCharacterMovement()->BrakingDecelerationWalking = 2400.f;
+	GetCharacterMovement()->BrakingDecelerationFalling = 2000.0f;
+	GetCharacterMovement()->RotationRate = FRotator(0.0f, 650.0f, 0.0f);
 
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->TargetArmLength = 400.0f;
+	CameraBoom->SocketOffset = FVector(0.0f, 0.0f, 60.0f);
+	CameraBoom->SetRelativeRotation(FRotator(-15.0f, 0.0f, 0.0f));
 	CameraBoom->bUsePawnControlRotation = true;
 
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
+
+	// Hardwired fallbacks for input assets so character is always fully playable
+	static ConstructorHelpers::FObjectFinder<UInputMappingContext> IMCFinder(TEXT("/Game/Input/IMC_Default.IMC_Default"));
+	if (IMCFinder.Succeeded())
+	{
+		DefaultMappingContext = IMCFinder.Object;
+	}
+
+	static ConstructorHelpers::FObjectFinder<UInputAction> JumpFinder(TEXT("/Game/Input/Actions/IA_Jump.IA_Jump"));
+	if (JumpFinder.Succeeded())
+	{
+		JumpAction = JumpFinder.Object;
+	}
+
+	static ConstructorHelpers::FObjectFinder<UInputAction> MoveFinder(TEXT("/Game/Input/Actions/IA_Move.IA_Move"));
+	if (MoveFinder.Succeeded())
+	{
+		MoveAction = MoveFinder.Object;
+	}
+
+	static ConstructorHelpers::FObjectFinder<UInputAction> LookFinder(TEXT("/Game/Input/Actions/IA_Look.IA_Look"));
+	if (LookFinder.Succeeded())
+	{
+		LookAction = LookFinder.Object;
+	}
 }
 
 void ATP_ThirdPersonCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (APlayerController* PC = Cast<APlayerController>(GetController()))
+	{
+		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
+		{
+			if (DefaultMappingContext)
+			{
+				Subsystem->AddMappingContext(DefaultMappingContext, 0);
+			}
+		}
+	}
+}
+
+void ATP_ThirdPersonCharacter::NotifyControllerChanged()
+{
+	Super::NotifyControllerChanged();
+
+	if (APlayerController* PC = Cast<APlayerController>(Controller))
+	{
+		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
+		{
+			if (DefaultMappingContext)
+			{
+				Subsystem->AddMappingContext(DefaultMappingContext, 0);
+			}
+		}
+	}
+}
+
+void ATP_ThirdPersonCharacter::PawnClientRestart()
+{
+	Super::PawnClientRestart();
+
+	if (APlayerController* PC = Cast<APlayerController>(GetController()))
+	{
+		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
+		{
+			if (DefaultMappingContext)
+			{
+				Subsystem->AddMappingContext(DefaultMappingContext, 0);
+			}
+		}
+	}
 }
 
 void ATP_ThirdPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
