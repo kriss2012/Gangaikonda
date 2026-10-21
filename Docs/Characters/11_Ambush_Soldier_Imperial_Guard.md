@@ -1,5 +1,7 @@
 # Character Visual Dossier: Imperial Ambush Soldier / Palace Guard (Velaikkarar / Maravar)
 
+![Imperial Ambush Soldier Palace Guard](image-4.png)
+
 - **Character ID:** CH-11 · **Canonical Tier:** Tier B (Military Archetype)
 - **Role:** Elite Chola Foot Soldier & Ambush Combatant
 - **Evidence Tag:** `[PLAUSIBLE RECONSTRUCTION]` (Built on documented Chola *Velaikkarar* and infantry units per Doc 03 I1, Doc 10)
