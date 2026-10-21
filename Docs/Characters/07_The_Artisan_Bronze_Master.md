@@ -1,5 +1,7 @@
 # Character Visual Dossier: The Artisan (Master Bronze-Caster / Sirpi)
 
+![The Artisan Bronze Master](image%20copy%206.png)
+
 - **Character ID:** CH-07 · **Canonical Tier:** Tier B (Fictional built on documented lost-wax bronze casters)
 - **Role:** Master Sculptor (*Sirpacharya*) of Imperial Chola Processional Bronzes (Nataraja, Somaskanda)
 - **Evidence Tag:** `[PLAUSIBLE RECONSTRUCTION]` (Built on documented Chola lost-wax casting technology per Doc 03 G1)
