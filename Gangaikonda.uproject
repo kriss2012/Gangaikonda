@@ -67,7 +67,7 @@
 		{
 			"Name": "GKUI",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "PostEngineInit"
 		},
 		{
 			"Name": "GKAudio",
