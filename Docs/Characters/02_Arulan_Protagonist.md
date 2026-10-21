@@ -1,5 +1,7 @@
 # Character Visual Dossier: Arulan (The Protagonist)
 
+![Arulan on Scaffolding](image%20copy.png)
+
 - **Character ID:** CH-02 · **Canonical Tier:** Tier B (Fictional Window Character)
 - **Role:** Protagonist / Player Character (Site Investigator & Scribe-turned-Liaison)
 - **Evidence Tag:** `[FICTIONAL]` (Designed to credibly navigate between court bureaucracy, stone construction yards, and dangerous conspiratorial investigations)
@@ -16,15 +18,9 @@
 ---
 
 ## 2. Costume & Visual Evolution Across Acts
-- **Act 1–2 (Court Scribe / Courier Dress):**
-  - Unbleached ivory cotton *Veshti* (waist-cloth) with modest indigo woven border.
-  - Light cream cross-body cotton chest wrap (*Angavastram*).
-  - Clean leather pouch on shoulder.
-- **Act 3–5 (Field Campaign Gear):**
-  - Sturdy undyed coarse khadi cotton wrapped securely above knees (*Kaccha* tuck) for climbing and fast running.
-  - Dyed terracotta/ochre linen chest band holding small writing tools and parchment slips.
-- **Act 6+ (Construction Site Investigator — Canonical In-Game Look):**
-  - Durable, breathable sand-colored unbleached cotton *Veshti* wrapped with double tuck.
+- **Construction Site Investigator (Canonical In-Game Look per Reference Image):**
+  - Durable, breathable sand-colored unbleached cotton *Veshti* wrapped with double tuck for high mobility.
+  - Rust/terracotta patterned cotton waist sash with fringed terminals.
   - Leather tool harness across the chest with loops for palm-leaf stylus, charcoal rubbing stones, and small brass calipers.
   - Forearms bound in protective unbleached cloth wraps to prevent stone splinters when climbing scaffolding and inspection platforms.
   - Bare feet with calloused soles for maximum traction on granite scaffolding beams.
@@ -42,9 +38,3 @@
 - **Writing Stylus (*Ezhuthani*):** Sharp iron-tipped brass stylus tucked in the waist belt, used for reading and incising Grantha/Tamil script on palm leaves.
 - **Rubbing Stone Kit:** Small pouch containing black charcoal lumps and soft handmade rag-cloth for taking epigraphic stone rubbings.
 - **Sidearm Weapon:** Short Chola bronze-hilted single-edged iron short-sword (*Vaal*) in a worn wooden sheath bound with rawhide, slung at the left hip for personal protection.
-
----
-
-## 5. Visual Prompt Reference (For Image Generation / Concept Art)
-> **Midjourney / Stable Diffusion Prompt Reference:**
-> *"Full body action portrait of Arulan, young 24-year-old Tamil protagonist, lean agile athletic physique, observant determined dark eyes, sun-bronzed skin, wavy black hair tied in practical low bun with light stubble beard. Wearing unbleached durable khadi cotton veshti dhoti tucked practical style, bare chest with leather cross-strap tool harness holding brass stylus and charcoal pouches, cloth-wrapped forearms. Standing agile on timber scaffolding overlooking a massive sandstone Chola temple construction site in ancient South India, warm late afternoon sunlight, dust motes in the air. Realistic AAA historical action-adventure concept art, Unreal Engine 5 quality, grounded and authentic 11th century."*
