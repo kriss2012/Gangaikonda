@@ -1,5 +1,7 @@
 # Character Visual Dossier: The Antagonist (Senior Imperial Administrator)
 
+![Senior Imperial Administrator](image-1.png)
+
 - **Character ID:** CH-08 · **Canonical Tier:** Tier B (Fictional built on documented state overreach tensions)
 - **Role:** High Minister / Overseer of Revenue & Logistics (The Ideological Counter-weight)
 - **Evidence Tag:** `[FICTIONAL DRAMATIZATION]` (Not villain-coded; represents administrative anxiety over imperial overextension per Doc 06 §8)
