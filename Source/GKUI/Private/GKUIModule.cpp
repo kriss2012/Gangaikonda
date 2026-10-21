@@ -15,4 +15,7 @@ void FGKUIModule::ShutdownModule()
 
 #undef LOCTEXT_NAMESPACE
 
+// Build salt: Chola_GKUI_VerticalSlice_v2
+volatile int32 G_GKUI_Salt = 1025;
+
 IMPLEMENT_MODULE(FGKUIModule, GKUI);
