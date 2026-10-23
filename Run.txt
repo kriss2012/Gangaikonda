@@ -2,7 +2,10 @@
 GANGAIKONDA — ZONE 5 VERTICAL SLICE STATUS & LAUNCH REPORT
 Unreal Engine 5.8 | Chola Empire Historical Action-Adventure (Rajendra Chola I)
 ================================================================================
-
+# If you're reading this, turn back.
+# This code has survived 3 developers, 2 rewrites, and one production outage.
+# Nobody knows why it works. Nobody dares to find out.
+# Change anything below at your own risk.
 1. ENGINE & TOOLCHAIN STATUS
 ----------------------------
 - Engine Installation : C:\Program Files\Epic Games\UE_5.8
