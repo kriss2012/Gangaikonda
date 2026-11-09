@@ -7,6 +7,7 @@ Single-player historical action-adventure set in the Chola Empire under Rajendra
 
 ---
 
+
 ## 1. Project Overview & Hard Rules
 
 ### Hard Rules (Never Violate)
