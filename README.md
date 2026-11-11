@@ -34,7 +34,8 @@ Source/
 ├── GKCharacter   — AGKCharacterBase, Arulan locomotion, NPC base classes
 ├── GKCombat      — UGKCombatComponent (GAS-integrated, grounded stamina-based)
 ├── GKExploration — Traversal, scaffold climbing, scan/interact
-├── GKPuzzle      — AGKPuzzleActor, IGKPuzzleInterface, load-path & hydraulic puzzles
+├── GKPuzzle      — AGKPuzzleActor, IGKPuzzleInterface, load-path & hydraulic puzz
+les
 ├── GKQuest       — UGKQuestSubsystem, quest state machine (DA_Quest_*)
 ├── GKDialogue    — UGKDialogueComponent, branching graph runtime, memory hooks
 ├── GKInventory   — Lightweight narrative/puzzle item inventory
