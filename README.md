@@ -21,6 +21,7 @@ Single-player historical action-adventure set in the Chola Empire under Rajendra
 6. **Data-Driven History:** Historical content lives in Data Tables (`DT_HistoricalEvidence`), never hardcoded strings.
 7. **Single-Player Only:** No networking code.
 
+
 ---
 
 ## 2. Architecture & Module Structure
