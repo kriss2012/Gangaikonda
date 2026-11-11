@@ -11,6 +11,7 @@ Single-player historical action-adventure set in the Chola Empire under Rajendra
 
 ## 1. Project Overview & Hard Rules
 
+
 ### Hard Rules (Never Violate)
 1. **Evidence Categorization:** Every historical claim in data or UI carries an evidence category (`Documented`, `PlausibleReconstruction`, `Fictional`) and confidence tier (`Known`, `Likely`, `Uncertain`, `Unknown`).
 2. **Authenticity of Inscriptions:** Never fabricate inscriptions, historical quotations, or evidence. Placeholder text must be visibly marked `[PLACEHOLDER – FICTIONAL]`.
